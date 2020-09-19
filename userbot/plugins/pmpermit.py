@@ -10,7 +10,7 @@ from userbot.utils import admin_cmd
 
 PMPERMIT_PIC = os.environ.get("PMPERMIT_PIC", None)
 if PMPERMIT_PIC is None:
-  WARN_PIC = "https://telegra.ph/file/82c595986872349e5ba1a.jpg"
+  WARN_PIC = "https://telegra.ph/file/c625651cf4afb0612d962.jpg"
 else:
   WARN_PIC = PMPERMIT_PIC
 
@@ -19,19 +19,21 @@ PREV_REPLY_MESSAGE = {}
 
 
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else "Set ALIVE_NAME in config vars in Heroku"
-CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**YOU HAVE TRESPASSED TO MY MASTERS INBOX** \n`THIS IS ILLEGAL AND REGARDED AS A CRIME`"
+CUSTOM_MIDDLE_PMP = str(CUSTOM_PMPERMIT) if CUSTOM_PMPERMIT else "**Kripya Shaanti Banaen Rakhein🤫...!!**"
 USER_BOT_WARN_ZERO = "`You were spamming my Boss's inbox, henceforth your retarded lame ass has been blocked by my master's userbot.` "
-USER_BOT_NO_WARN = ("`Hello ! This is` **F.R.I.D.A.Y**\n"
-                    "`Private Messaging Security Protocol ⚠️`\n\n"
-                    "**Currently My Boss**\n"
-                    f"{DEFAULTUSER} is Busy ! So Better Don't Spam His Inbox !\n\n"
+USER_BOT_NO_WARN = ("Are bina puuche andar kaise aaye 😡? Acha baat nahi hai ye😐\n"
+                 
+                    "**Humare Sethji**\n"
+                    f"{DEFAULTUSER} abhi busy hain ! Baad mein aana...agar wo aapko jaante hain to khud reply karenge 🤞..!! !\n\n"
                     f"{CUSTOM_MIDDLE_PMP} \n\n"
-                    "**Now You Are In Trouble So Send** 🍁 `/start` 🍁  **To Start A Valid Conversation!!**")
+                    "**Sethji se baat krne ke liye**  `/start`   **se reply karein 👇👇**\n\n"
+                    "**Aapki Seva mein ~N.A.T.U.K.A.K.A**")
+                
 
 
 if Var.PRIVATE_GROUP_ID is not None:
     @command(pattern="^.a ?(.*)")
-    async def block(event):
+    async def approve_p_m(event):
         if event.fwd_from:
            return
         replied_user = await event.client(GetFullUserRequest(event.chat_id))
@@ -199,6 +201,6 @@ async def hehehe(event):
     chat = await event.get_chat()
     if event.is_private:
         if not pmpermit_sql.is_approved(chat.id):
-            pmpermit_sql.approve(chat.id, "**My Boss Is Best🔥**")
+            pmpermit_sql.approve(chat.id, "**Humara Maalik BEST🔥**")
             await borg.send_message(chat, "**This User Is My Dev ! So Auto Approved !!!!**")
            
